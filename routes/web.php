@@ -18,4 +18,4 @@ Route::get('/', function () {
 });
 
 // Productes
-Route::get('/productes', [App\Http\Controllers\PlroducteController::class, 'index'])->name('productes.index');
+Route::get('/productes', [App\Http\Controllers\ProducteController::class, 'index'])->name('productes.index');
