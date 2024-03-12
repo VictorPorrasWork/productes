@@ -19,3 +19,7 @@ Route::get('/', function () {
 
 // Productes
 Route::get('/productes', [App\Http\Controllers\ProducteController::class, 'index'])->name('productes.index');
+Route::get('/productes/create', [App\Http\Controllers\ProducteController::class, 'create'])->name('productes.create');
+Route::post('/productes/store', [App\Http\Controllers\ProducteController::class, 'store'])->name('productes.store');
+Route::get('/productes/edit/{producte}', [App\Http\Controllers\ProducteController::class, 'edit'])->name('productes.edit');
+Route::post('/productes/update/{producte}', [App\Http\Controllers\ProducteController::class, 'update'])->name('productes.update');
