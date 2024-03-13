@@ -62,7 +62,21 @@ class ProducteController extends Controller
         $productes -> save();
         return redirect()->route('productes.index')->with('success','Producte actualitzat correctament.');
     }
-
-
-
+   
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Producte $producte)
+    {
+        try {
+            $result = $producte->delete();
+        } catch(\Illuminate\Database\QueryException $e) {
+            return redirect()->route('productes.index')->with('error','Error esborrant el producte.');
+        }
+        return redirect()->route('productes.index')->with('success','Producte esborrat correctament.');
+    }
+    
 }

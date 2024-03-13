@@ -6,7 +6,7 @@
             <tr>
             <th scope="col">Id</th>
             <th scope="col">Nom</th>
-            <th scope="col">Descripcio</th>
+            <th scope="col">Descripció</th>
             <th scope="col" colspan="2">Operacions</th>
             </tr>
         </thead>
@@ -21,6 +21,12 @@
         <td>
             {{ $producte -> descripcio_categoria }}
         </td>    
+        <td>
+          <a class="btn btn-primary" href="{{ route('productes.edit', $producte->id) }}" role="button">Modificar</a>
+        </td>
+        <td>
+          <a class="btn btn-danger" href="{{ route('productes.destroy', $producte->id) }}" role="button">Esborrar</a>
+        </td>
       </tr>
       @endforeach
     </tbody>
@@ -28,4 +34,6 @@
   <a class="btn btn-primary btn-sm" href="{{ route('productes.create') }}">Nou Producte</a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </div>
+
+{{ $productes -> links('pagination::bootstrap-4') }}
 

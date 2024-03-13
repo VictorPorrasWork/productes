@@ -16,7 +16,7 @@
 <body>
     <h3 class="text-center p-3">Entorn backoffice</h3>
     <p>Aplicació per la gestio de continguts.</p>
-    <a href="{{ route('productes.index') }}" class="btn btn-primary">Ver Productos</a>
+    <a href="{{ route('productes.index') }}" class="btn btn-primary">Veure Productes</a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
