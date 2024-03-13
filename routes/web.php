@@ -17,13 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Productes
-Route::get('/productes', [App\Http\Controllers\ProducteController::class, 'index'])->name('productes.index');
-Route::get('/productes/create', [App\Http\Controllers\ProducteController::class, 'create'])->name('productes.create');
-Route::post('/productes/store', [App\Http\Controllers\ProducteController::class, 'store'])->name('productes.store');
-Route::get('/productes/edit/{producte}', [App\Http\Controllers\ProducteController::class, 'edit'])->name('productes.edit');
-Route::post('/productes/update/{producte}', [App\Http\Controllers\ProducteController::class, 'update'])->name('productes.update');
-Route::get('/productes/destroy/{producte}', [App\Http\Controllers\ProducteController::class, 'destroy'])->name('productes.destroy');
+// Auth
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Rutas protegidas que requieren autenticación
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    // Rutas relacionadas con Productes
+    Route::get('/productes', [App\Http\Controllers\ProducteController::class, 'index'])->name('productes.index');
+    Route::get('/productes/create', [App\Http\Controllers\ProducteController::class, 'create'])->name('productes.create');
+    Route::post('/productes/store', [App\Http\Controllers\ProducteController::class, 'store'])->name('productes.store');
+    Route::get('/productes/edit/{producte}', [App\Http\Controllers\ProducteController::class, 'edit'])->name('productes.edit');
+    Route::post('/productes/update/{producte}', [App\Http\Controllers\ProducteController::class, 'update'])->name('productes.update');
+    Route::get('/productes/destroy/{producte}', [App\Http\Controllers\ProducteController::class, 'destroy'])->name('productes.destroy');
+});
