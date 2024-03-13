@@ -13,25 +13,28 @@
     <tbody>
       @foreach($productes as $producte)
       <tr>
-        <td>{{ $producte -> id }}
-        </td>
-        <td>
-            {{ $producte -> nom_categoria }}
-        </td>
-        <td>
-            {{ $producte -> descripcio_categoria }}
-        </td>    
+        <td>{{ $producte -> id }}</td>
+        <td>{{ $producte -> nom_categoria }}</td>
+        <td>{{ $producte -> descripcio_categoria }}</td>    
         <td>
           <a class="btn btn-primary" href="{{ route('productes.edit', $producte->id) }}" role="button">Modificar</a>
         </td>
         <td>
-          <a class="btn btn-danger" href="{{ route('productes.destroy', $producte->id) }}" role="button">Esborrar</a>
+          <!-- Habilitem botó destroy només per al administrador -->
+        @if(auth()->user()->getIsAdminAttribute())
+          <form action="{{ route('productes.destroy', $producte->id) }}" method="POST">
+            @csrf
+            @method('GET')
+            <button type="submit" class="btn btn-danger">Esborrar</button>
+          </form>
+        @endif
         </td>
       </tr>
       @endforeach
     </tbody>
   </table>
   <a class="btn btn-primary btn-sm" href="{{ route('productes.create') }}">Nou Producte</a>
+  <a class="btn btn-primary btn-sm" href="{{ route('welcome') }}" class="btn btn-primary">Pàgina Inici</a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </div>
 
