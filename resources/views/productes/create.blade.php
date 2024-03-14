@@ -23,7 +23,12 @@
     <form action="{{ route('productes.store') }}" method="POST">
         @csrf
         <label for="nom_categoria">Nom de la categoria:</label><br>
-        <input type="text" id="nom_categoria" name="nom_categoria" value="{{ old('nom_categoria') }}"><br>
+        <select name="nom_categoria" id="nom_categoria">
+            @foreach(['fruïta', 'carn', 'peix', 'fruïts secs', 'cereal', 'verdura'] as $nom_categoria)
+                <option value="{{ $nom_categoria }}">{{ $nom_categoria }}</option>
+            @endforeach
+        </select>    
+        <br>
 
         <label for="descripcio_categoria">Descripció de la categoria:</label><br>
         <textarea id="descripcio_categoria" name="descripcio_categoria">{{ old('descripcio_categoria') }}</textarea><br>

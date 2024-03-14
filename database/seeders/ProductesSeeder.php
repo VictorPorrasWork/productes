@@ -23,7 +23,7 @@ class ProductesSeeder extends Seeder
             ],
             [
                 'nom_categoria' => "carn",
-                'descripcio_categoria' => "carn de gaïa la Riera",
+                'descripcio_categoria' => "carn de la Riera de Gaïa",
                 'quantitat' => 3,
             ],
             [ 
@@ -33,7 +33,17 @@ class ProductesSeeder extends Seeder
             ],
             [
                 'nom_categoria' => "fruits secs",
-                'descripcio_categoria' => "fruits del baix empordà",
+                'descripcio_categoria' => "fruits del Baix Empordà",
+                'quantitat' => 3,
+            ],
+            [
+                'nom_categoria' => "cereal",
+                'descripcio_categoria' => "cooperativa de Prades",
+                'quantitat' => 3,
+            ],
+            [
+                'nom_categoria' => "verdura",
+                'descripcio_categoria' => "distribuïdor del delta del Ebre",
                 'quantitat' => 3,
             ],
         ];
