@@ -33,6 +33,14 @@
         <label for="descripcio_categoria">Descripció de la categoria:</label><br>
         <textarea id="descripcio_categoria" name="descripcio_categoria">{{ $producte->descripcio_categoria }}</textarea><br>
 
+        <label for="categoria_filla">Categoria filla:</label><br>
+        <select name="categoria_filla" id="categoria_filla">
+            @foreach($categoriaFilla[$producte->nom_categoria] as $categoriaFilla)
+                <option value="{{ $categoriaFilla }}" {{ $producte->categoria_filla == $categoriaFilla ? 'selected' : '' }}>{{ $categoriaFilla }}</option>
+            @endforeach
+        </select>
+        <br>
+
         <label for="quantitat">Quantitat:</label><br>
         <input type="number" id="quantitat" name="quantitat" value="{{ $producte->quantitat }}"><br>
 

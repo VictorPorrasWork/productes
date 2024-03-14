@@ -30,11 +30,13 @@ class ProducteController extends Controller
         $request -> validate([
             'nom_categoria' => 'required | min:2 | max:50',
             'descripcio_categoria' => 'required | min:5 | max:200',
+            'categoria_filla' => 'required | min:2 | max:50',
             'quantitat' => 'required|integer|min:1' 
         ]);
         $productes = new Producte;
         $productes -> nom_categoria = $request -> nom_categoria;
         $productes -> descripcio_categoria = $request -> descripcio_categoria;
+        $productes -> categoria_filla = $request -> categoria_filla;
         $productes -> quantitat = $request -> quantitat;
         $productes -> save();
         return redirect()->route('productes.index')->with('success','Producte creat correctament.');
@@ -42,7 +44,16 @@ class ProducteController extends Controller
 
     public function edit(Producte $producte)
     {
-        return view('productes.edit', compact('producte'));
+        $categoriaFilla = [
+            'fruïta' => ['pomes', 'maduixes', 'platan', 'cireres'],
+            'carn' => ['porc', 'pollastre', 'gall dindi','xai'],
+            'peix' => ['sardina', 'llobarro', 'bacallà', 'tonyina'],
+            'fruïts secs' => ['ametlles', 'nous', 'festucs', 'castanyes'],
+            'cereals' => ['integral', 'quinoa', 'avena', 'cebada'],
+            'verdura' => ['faves', 'brocoli', 'espinacs', 'pèsols'],
+        ];
+
+        return view('productes.edit', compact('producte', 'categoriaFilla'));
     }
     
     /**
@@ -57,11 +68,13 @@ class ProducteController extends Controller
         $request -> validate([
             'nom_categoria' => 'required | min:2 | max:50',
             'descripcio_categoria' => 'required | min:5 | max:200',
+            'categoria_filla' => 'required | min:2 | max:50',
             'quantitat' => 'required|integer|min:1' 
         ]);
         $productes = new Producte;
         $productes -> nom_categoria = $request -> nom_categoria;
         $productes -> descripcio_categoria = $request -> descripcio_categoria;
+        $productes -> categoria_filla = $request -> categoria_filla;
         $productes -> quantitat = $request -> quantitat;
         $productes -> save();
         return redirect()->route('productes.index')->with('success','Producte actualitzat correctament.');

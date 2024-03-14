@@ -17,35 +17,60 @@ class ProductesSeeder extends Seeder
     {
         $productes = [
             [
-                'nom_categoria' => "fruita",
+                'nom_categoria' => "fruïta",
                 'descripcio_categoria' => "Hortalitzes del huerto collites Torredembarra",
-                'quantitat' => 3,
+                'categoria_filla'=> "pomes",
+                'quantitat' => 500,
             ],
             [
                 'nom_categoria' => "carn",
                 'descripcio_categoria' => "carn de la Riera de Gaïa",
-                'quantitat' => 3,
+                'categoria_filla'=> "porc",
+                'quantitat' => 30,
             ],
             [ 
                 'nom_categoria' => "peix",
                 'descripcio_categoria' => "port de Torredembarra",
-                'quantitat' => 3,
+                'categoria_filla'=> "bacallà",
+                'quantitat' => 60,
             ],
             [
-                'nom_categoria' => "fruits secs",
+                'nom_categoria' => "fruïts secs",
                 'descripcio_categoria' => "fruits del Baix Empordà",
-                'quantitat' => 3,
+                'categoria_filla'=> "nous",
+                'quantitat' => 300,
             ],
             [
-                'nom_categoria' => "cereal",
+                'nom_categoria' => "cereals",
                 'descripcio_categoria' => "cooperativa de Prades",
-                'quantitat' => 3,
+                'categoria_filla'=> "cebada",
+                'quantitat' => 600,
             ],
             [
                 'nom_categoria' => "verdura",
                 'descripcio_categoria' => "distribuïdor del delta del Ebre",
-                'quantitat' => 3,
+                'categoria_filla'=> "faves",
+                'quantitat' => 200,
             ],
+            [
+                'nom_categoria' => "verdura",
+                'descripcio_categoria' => "distribuïdor del delta del Ebre",
+                'categoria_filla'=> "brocoli",
+                'quantitat' => 400,
+            ],        
+            [
+                'nom_categoria' => "verdura",
+                'descripcio_categoria' => "distribuïdor del delta del Ebre",
+                'categoria_filla'=> "espinacs",
+                'quantitat' => 500,
+            ],
+            [
+                'nom_categoria' => "verdura",
+                'descripcio_categoria' => "distribuïdor del delta del Ebre",
+                'categoria_filla'=> "pèsols",
+                'quantitat' => 300,
+            ],
+        
         ];
         
         Producte::insert($productes);
