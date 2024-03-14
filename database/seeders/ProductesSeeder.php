@@ -19,18 +19,22 @@ class ProductesSeeder extends Seeder
             [
                 'nom_categoria' => "fruita",
                 'descripcio_categoria' => "Hortalitzes del huerto collites Torredembarra",
+                'quantitat' => 3,
             ],
             [
                 'nom_categoria' => "carn",
                 'descripcio_categoria' => "carn de gaïa la Riera",
+                'quantitat' => 3,
             ],
             [ 
                 'nom_categoria' => "peix",
                 'descripcio_categoria' => "port de Torredembarra",
+                'quantitat' => 3,
             ],
             [
                 'nom_categoria' => "fruits secs",
                 'descripcio_categoria' => "fruits del baix empordà",
+                'quantitat' => 3,
             ],
         ];
         

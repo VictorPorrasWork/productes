@@ -29,11 +29,13 @@ class ProducteController extends Controller
     {
         $request -> validate([
             'nom_categoria' => 'required | min:2 | max:50',
-            'descripcio_categoria' => 'required | min:5 | max:200'
+            'descripcio_categoria' => 'required | min:5 | max:200',
+            'quantitat' => 'required|integer|min:1' 
         ]);
         $productes = new Producte;
         $productes -> nom_categoria = $request -> nom_categoria;
         $productes -> descripcio_categoria = $request -> descripcio_categoria;
+        $productes -> quantitat = $request -> quantitat;
         $productes -> save();
         return redirect()->route('productes.index')->with('success','Producte creat correctament.');
     }
@@ -54,11 +56,13 @@ class ProducteController extends Controller
     {
         $request -> validate([
             'nom_categoria' => 'required | min:2 | max:50',
-            'descripcio_categoria' => 'required | min:5 | max:200'
+            'descripcio_categoria' => 'required | min:5 | max:200',
+            'quantitat' => 'required|integer|min:1' 
         ]);
         $productes = new Producte;
         $productes -> nom_categoria = $request -> nom_categoria;
         $productes -> descripcio_categoria = $request -> descripcio_categoria;
+        $productes -> quantitat = $request -> quantitat;
         $productes -> save();
         return redirect()->route('productes.index')->with('success','Producte actualitzat correctament.');
     }

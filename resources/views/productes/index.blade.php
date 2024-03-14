@@ -7,6 +7,7 @@
             <th scope="col">Id</th>
             <th scope="col">Nom</th>
             <th scope="col">Descripció</th>
+            <th scope="col">Quantitat</th>
             <th scope="col" colspan="2">Operacions</th>
             </tr>
         </thead>
@@ -15,7 +16,8 @@
       <tr>
         <td>{{ $producte -> id }}</td>
         <td>{{ $producte -> nom_categoria }}</td>
-        <td>{{ $producte -> descripcio_categoria }}</td>    
+        <td>{{ $producte -> descripcio_categoria }}</td>
+        <td>{{ $producte -> quantitat }}</td>    
         <td>
           <a class="btn btn-primary" href="{{ route('productes.edit', $producte->id) }}" role="button">Modificar</a>
         </td>

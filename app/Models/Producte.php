@@ -14,6 +14,6 @@ class Producte extends Model
     protected $fillable = [
         'nom_categoria',
         'descripcio_categoria',
-      
+        'quantitat',
     ];
 }

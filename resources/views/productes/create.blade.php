@@ -28,6 +28,9 @@
         <label for="descripcio_categoria">Descripció de la categoria:</label><br>
         <textarea id="descripcio_categoria" name="descripcio_categoria">{{ old('descripcio_categoria') }}</textarea><br>
 
+        <label for="quantitat">Quantitat:</label><br>
+        <input type="number" id="quantitat" name="quantitat" value="{{ old('quantitat') }}"><br>
+
         <button type="submit">Crear Producte</button>
         
         <a href="{{ route('productes.index') }}" class="btn btn-primary">Veure Productes</a>

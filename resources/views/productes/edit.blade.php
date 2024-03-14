@@ -28,6 +28,9 @@
         <label for="descripcio_categoria">Descripció de la categoria:</label><br>
         <textarea id="descripcio_categoria" name="descripcio_categoria">{{ $producte->descripcio_categoria }}</textarea><br>
 
+        <label for="quantitat">Quantitat:</label><br>
+        <input type="number" id="quantitat" name="quantitat" value="{{ $producte->quantitat }}"><br>
+
         <button type="submit">Guardar Canvis</button>
 
         <a href="{{ route('productes.index') }}" class="btn btn-primary">Veure Productes</a>
