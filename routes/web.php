@@ -22,10 +22,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Rutas protegidas que requieren autenticación 
+// Rutes protegides que requereixen autenticació
 Route::group(['middleware'=>['auth']], function() {
     
-    // Rutas relacionadas con Productes
+    // Rutes relacionades amb Productes
     Route::get('/productes', [App\Http\Controllers\ProducteController::class, 'index'])->name('productes.index');
     Route::get('/productes/create', [App\Http\Controllers\ProducteController::class, 'create'])->name('productes.create');
     Route::post('/productes/store', [App\Http\Controllers\ProducteController::class, 'store'])->name('productes.store');
@@ -34,7 +34,7 @@ Route::group(['middleware'=>['auth']], function() {
 
 });
 
-// Rutas protegidas que requieren autenticación y ser admin
+// Rutes protegides que requereixen autenticación y esser admin
 Route::group(['middleware'=>['auth','is_admin']], function() {
     
     Route::get('/productes/destroy/{producte}', [App\Http\Controllers\ProducteController::class, 'destroy'])->name('productes.destroy');

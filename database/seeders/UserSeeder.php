@@ -25,11 +25,18 @@ class UserSeeder extends Seeder
                 ],
                 
                 [
-                    'name' => 'maria',
-                    'email' => 'maria@gmail.com',
+                    'name' => 'victor',
+                    'email' => 'victor@gmail.com',
                     'password' => bcrypt('1234'),
                     'role_id' => '0',
                 ],
+                [
+                    'name' => 'maria',
+                    'email' => 'maria@gmail.com',
+                    'password' => bcrypt('5678'),
+                    'role_id' => '0',
+                ],          
+
             ]
         );
     }
