@@ -76,16 +76,17 @@ Obrir visual studio code.
 Ens situem a la carpeta creada amb l’opció open folder.
 Desde el terminal executem les comandes següents:
 Amb el link del code/HTTPS de GitHub:
-- git clone https://github.com/VictorPorrasWork/productes.git
-- cd productes
-- composer install
-- cp .env.example .env (canviar en fitxer .env DB_DATABASE= productes_laravel)
-- php artisan key:generate
-- npm install
-- npm run build
-- php artisan migrate
-- php artisan db:seed
-- php artisan db:seed --class=ProductesSeeder
-- php artisan db:seed --class=UserSeeder
+git clone https://github.com/VictorPorrasWork/productes.git
+cd productes
+
+composer install
+cp .env.example .env (canviar en fitxer .env DB_DATABASE= productes_laravel)
+php artisan key:generate
+npm install
+npm run build
+php artisan migrate
+php artisan db:seed
+php artisan db:seed --class=ProductesSeeder
+php artisan db:seed --class=UserSeeder
 
 
